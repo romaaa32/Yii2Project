@@ -1,12 +1,12 @@
 <?php
 
-namespace frontend\components;
+namespace common\components;
 
 use Yii;
 
 /**
  * Class StringHelper
- * @package frontend\components
+ * @package common\components
  */
 class StringHelper
 {
