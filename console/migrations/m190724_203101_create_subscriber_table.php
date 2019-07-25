@@ -10,7 +10,6 @@ class m190724_203101_create_subscriber_table extends Migration
 
     /**
      * @return bool|void
-     * @throws \yii\db\Exception
      */
     public function safeUp()
     {
@@ -21,8 +20,7 @@ class m190724_203101_create_subscriber_table extends Migration
     }
 
     /**
-     * {@inheritdoc}
-     * @throws \yii\db\Exception
+     * @return bool|void
      */
     public function safeDown()
     {
