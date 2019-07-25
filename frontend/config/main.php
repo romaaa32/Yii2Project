@@ -44,22 +44,11 @@ return [
             'rules' => [
                 'novosti' => 'test/index',
                 'novosti/<id:\d+>' => 'test/view',
+
             ],
         ],
         'stringHelper' => [
             'class' => 'common\components\StringHelper',
-        ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'useFileTransport' => false,
-            'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'host' => 'localhost',
-                'username' => '',
-                'password' => '',
-                'port' => '587',
-                'encryption' => 'tls',
-            ],
         ],
 
     ],
