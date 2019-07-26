@@ -52,6 +52,7 @@ return [
             'class' => 'common\components\StringHelper',
         ],
 
+
     ],
     'params' => $params,
 ];
