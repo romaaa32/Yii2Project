@@ -5,6 +5,17 @@
  * @var $model frontend\models\Subscribe
  */
 
+
+use frontend\assets\GalleryAsset;
+
+GalleryAsset::register($this);
+
+$this->title = 'Подпишитесь на новости!';
+$this->registerMetaTag([
+        'name' => 'description',
+        'content' => 'Description of the page...',
+]);
+
 if (Yii::$app->session->hasFlash('subscriberStatus')) {
     echo Yii::$app->session->getFlash('subscriberStatus');
 }
