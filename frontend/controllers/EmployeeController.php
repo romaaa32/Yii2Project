@@ -4,6 +4,7 @@
 namespace frontend\controllers;
 
 use frontend\models\Employee;
+use Yii;
 use yii\web\Controller;
 use frontend\models\example\Animal;
 use frontend\models\example\Human;
@@ -39,4 +40,51 @@ class EmployeeController extends Controller
         $human1->walk();
         $animal1->walk();
     }
+
+    /**
+     * @return string
+     */
+    public function actionRegister()
+    {
+        $model = new Employee();
+        $model->scenario = Employee::SCENARIO_EMPLOYEE_REGISTER;
+
+        $formDate = Yii::$app->request->post();
+
+        if (Yii::$app->request->isPost) {
+            $model->attributes = $formDate;
+
+            if ($model->validate() && $model->save()) {
+                Yii::$app->session->setFlash('success', 'Регистрация прошла успешно!');
+            }
+        }
+
+        return $this->render('register', [
+            'model' => $model,
+        ]);
+    }
+
+    /**
+     * @return string
+     */
+    public function actionUpdate()
+    {
+        $model = new Employee();
+        $model->scenario = Employee::SCENARIO_EMPLOYEE_UPDATE;
+
+        $formDate = Yii::$app->request->post();
+
+        if (Yii::$app->request->isPost) {
+            $model->attributes = $formDate;
+
+            if ($model->validate() && $model->save()) {
+                Yii::$app->session->setFlash('success', 'Данные успешно изменены!');
+            }
+        }
+
+        return $this->render('update', [
+            'model' => $model,
+        ]);
+    }
+
 }
